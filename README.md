@@ -17,3 +17,9 @@ Per la creació d'aquesta web, s'han utilitzat les següents tecnologies i eines
 ## Autor
 
 👤 Biel Batalla Rabassa
+
+## Resultats 
+
+![Captura 1](/img/i1.png)
+![Captura 2](/img/i2.png)
+![Captura 3](/img/i3.png)
