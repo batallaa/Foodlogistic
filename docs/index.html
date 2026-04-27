@@ -69,15 +69,6 @@ nav a:hover {
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-}
-
-.hero p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
-
 /* MAIN */
 main {
     padding: 2rem;
@@ -92,7 +83,7 @@ h2 {
     color: var(--primary-color);
 }
 
-/* SERVEIS */
+/* SERVICES */
 .services {
     display: grid;
     gap: 1.5rem;
@@ -103,41 +94,9 @@ h2 {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-/* ABOUT */
-.about-container {
-    display: grid;
-    gap: 2rem;
-}
-
-.about img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* CONTACT BOX (nou) */
-.contact-box {
-    background: var(--light-color);
-    padding: 1.5rem;
-    border-radius: 10px;
-}
-
-.contact-box p {
-    margin-bottom: 0.5rem;
-}
-
-/* FORM */
+/* CONTACT */
 form {
     display: flex;
     flex-direction: column;
@@ -159,8 +118,11 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    opacity: 0.9;
+/* CHECKBOX */
+.checkbox {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
 /* FOOTER */
@@ -171,19 +133,22 @@ footer {
     padding: 1rem;
 }
 
-/* RESPONSIVE */
-@media(min-width: 768px) {
-    .services {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* COOKIE BANNER */
+#cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .about-container {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .hero h2 {
-        font-size: 3rem;
-    }
+#cookieBanner button {
+    margin-left: 1rem;
 }
 </style>
 </head>
@@ -196,69 +161,77 @@ footer {
     <ul>
         <li><a href="#inici">Inici</a></li>
         <li><a href="#serveis">Serveis</a></li>
-        <li><a href="#sobre">Sobre nosaltres</a></li>
         <li><a href="#contacte">Contacte</a></li>
+        <li><a href="#legal">Legal</a></li>
     </ul>
 </nav>
 </header>
 
 <main>
 
+<!-- HERO -->
 <section id="inici" class="hero">
-    <h2>Solucions logístiques per al sector alimentari</h2>
-    <p>Eficiència, seguretat i qualitat en cada lliurament</p>
+    <h2>Logística alimentària segura</h2>
+    <p>Eficiència i control en cada enviament</p>
 </section>
 
+<!-- SERVEIS -->
 <section id="serveis">
     <h2>Serveis</h2>
     <div class="services">
-        <div class="card">
-            <h3>❄️ Transport refrigerat</h3>
-            <p>Garantim la cadena de fred per mantenir la qualitat.</p>
-        </div>
-        <div class="card">
-            <h3>🚚 Distribució ràpida</h3>
-            <p>Optimització de rutes per entregues eficients.</p>
-        </div>
-        <div class="card">
-            <h3>🏭 Magatzematge</h3>
-            <p>Instal·lacions adaptades per aliments.</p>
-        </div>
+        <div class="card">❄️ Transport refrigerat</div>
+        <div class="card">🚚 Distribució ràpida</div>
+        <div class="card">🏭 Magatzematge</div>
     </div>
 </section>
 
-<section id="sobre" class="about">
-    <h2>Sobre nosaltres</h2>
-
-    <div class="about-container">
-
-        <div>
-            <p>FoodLogistic és una empresa especialitzada en logística alimentària. Apostem per la innovació, la sostenibilitat i la qualitat per garantir el millor servei als nostres clients.</p>
-            <img src="https://picsum.photos/800/400?warehouse,food">
-        </div>
-
-        <!-- NOU: DADES DE CONTACTE -->
-        <div class="contact-box">
-            <h3>Contacte directe</h3>
-            <p><strong>📍 Adreça:</strong> Barcelona, Catalunya</p>
-            <p><strong>📞 Telèfon:</strong> +34 600 123 456</p>
-            <p><strong>✉️ Email:</strong> info@foodlogistic.com</p>
-            <p><strong>🕒 Horari:</strong> Dilluns - Divendres (8:00 - 18:00)</p>
-        </div>
-
-    </div>
-</section>
-
+<!-- CONTACTE -->
 <section id="contacte">
-    <h2>Contacte</h2>
-    <form id="contactForm">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Correu electrònic" required>
-        <input type="tel" name="telefon" placeholder="Telèfon">
-        <textarea name="missatge" rows="5" placeholder="Missatge" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-    <p id="formMessage"></p>
+<h2>Contacte</h2>
+
+<form>
+    <input type="text" placeholder="Nom" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Telèfon">
+    <textarea placeholder="Missatge"></textarea>
+
+    <!-- RGPD CONSENTIMENT -->
+    <div class="checkbox">
+        <input type="checkbox" required>
+        <label>Accepto la política de privacitat</label>
+    </div>
+
+    <div class="checkbox">
+        <input type="checkbox">
+        <label>Vull rebre comunicacions comercials</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+</form>
+</section>
+
+<!-- LEGAL -->
+<section id="legal">
+<h2>Informació legal</h2>
+
+<h3>Avís Legal</h3>
+<p>FoodLogistic S.A. és responsable del tractament de dades personals amb finalitat de gestió de serveis logístics.</p>
+
+<h3>Política de Privacitat (ARSLOP)</h3>
+<ul>
+<li>Accés</li>
+<li>Rectificació</li>
+<li>Supressió</li>
+<li>Oposició</li>
+<li>Limitació</li>
+<li>Portabilitat</li>
+</ul>
+
+<p>Les dades no es cedeixen a tercers sense consentiment.</p>
+
+<h3>Política de Cookies</h3>
+<p>Utilitzem cookies necessàries i analítiques amb durada màxima de 12 mesos.</p>
+
 </section>
 
 </main>
@@ -267,26 +240,29 @@ footer {
 <p>&copy; 2026 FoodLogistic</p>
 </footer>
 
+<!-- COOKIE BANNER -->
+<div id="cookieBanner">
+    <span>Utilitzem cookies per millorar l'experiència.</span>
+    <div>
+        <button onclick="acceptCookies()">Acceptar</button>
+        <button onclick="rejectCookies()">Rebutjar</button>
+    </div>
+</div>
+
 <script>
-const form = document.getElementById('contactForm');
-const message = document.getElementById('formMessage');
+function acceptCookies(){
+    localStorage.setItem("cookies","accepted");
+    document.getElementById("cookieBanner").style.display="none";
+}
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+function rejectCookies(){
+    localStorage.setItem("cookies","rejected");
+    document.getElementById("cookieBanner").style.display="none";
+}
 
-    const data = new FormData(form);
-
-    if (!data.get('nom') || !data.get('email')) {
-        message.textContent = 'Completa els camps obligatoris.';
-        message.style.color = 'red';
-        return;
-    }
-
-    message.textContent = 'Missatge enviat correctament (simulació).';
-    message.style.color = 'green';
-
-    form.reset();
-});
+if(localStorage.getItem("cookies")){
+    document.getElementById("cookieBanner").style.display="none";
+}
 </script>
 <!-- Default Statcounter code for FoodLogistic
 https://batallaa.github.io/Foodlogistic/ -->
