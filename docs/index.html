@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -15,10 +16,8 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
-
 body{background:var(--bg);color:#333;}
 
-/* HEADER */
 header{
     background:var(--dark);
     color:white;
@@ -35,22 +34,10 @@ nav{
 }
 
 nav h1{color:var(--accent);}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:1rem;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
-
+nav ul{display:flex;list-style:none;gap:1rem;}
+nav a{color:white;text-decoration:none;font-weight:500;}
 nav a:hover{color:var(--accent);}
 
-/* HERO */
 .hero{
     background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
     url('https://picsum.photos/1600/800?warehouse,food') center/cover;
@@ -62,7 +49,6 @@ nav a:hover{color:var(--accent);}
 .hero h2{font-size:2.5rem;}
 .hero p{margin-top:1rem;font-size:1.2rem;}
 
-/* SECTIONS */
 .container{
     padding:2rem;
     max-width:1100px;
@@ -76,14 +62,12 @@ nav a:hover{color:var(--accent);}
     box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-/* SERVICES GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:1rem;
 }
 
-/* FORM */
 form{
     display:flex;
     flex-direction:column;
@@ -105,7 +89,6 @@ button{
     border-radius:5px;
 }
 
-/* TABS LEGAL */
 .tabs{
     display:flex;
     gap:1rem;
@@ -125,15 +108,9 @@ button{
     color:white;
 }
 
-.tab-content{
-    display:none;
-}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
 
-.tab-content.active{
-    display:block;
-}
-
-/* COOKIE */
 #cookie{
     position:fixed;
     bottom:0;
@@ -143,12 +120,11 @@ button{
     padding:1rem;
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
 }
 
-#cookie button{
-    margin-left:1rem;
-}
+#cookie label{margin-right:10px;}
 
 footer{
     background:var(--dark);
@@ -174,16 +150,13 @@ footer{
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="inici">
 <h2>Logística alimentària intel·ligent</h2>
 <p>Seguretat, traçabilitat i eficiència</p>
 </section>
 
-<!-- SERVEIS -->
 <section class="container" id="serveis">
 <h2>Serveis</h2><br>
-
 <div class="grid">
 <div class="card">❄️ Transport refrigerat</div>
 <div class="card">🚚 Distribució optimitzada</div>
@@ -191,7 +164,6 @@ footer{
 </div>
 </section>
 
-<!-- CONTACTE -->
 <section class="container" id="contacte">
 <h2>Contacte</h2><br>
 
@@ -203,19 +175,18 @@ footer{
 
 <label>
 <input type="checkbox" required>
-Accepto la política de privacitat
+He llegit i accepto la <a href="#privacitat">política de privacitat</a>
 </label>
 
 <label>
 <input type="checkbox">
-Vull comunicacions comercials
+Accepto rebre comunicacions comercials
 </label>
 
 <button type="submit">Enviar</button>
 </form>
 </section>
 
-<!-- LEGAL AMB TABS -->
 <section class="container" id="legal">
 <h2>Informació legal</h2><br>
 
@@ -228,28 +199,46 @@ Vull comunicacions comercials
 <div id="avis" class="tab-content active">
 <div class="card">
 <h3>Avís Legal</h3>
-<p>FoodLogistic S.A. és responsable del tractament de dades personals amb finalitat de serveis logístics.</p>
+<p><strong>Empresa:</strong> FoodLogistic S.A.</p>
+<p><strong>CIF:</strong> A12345678</p>
+<p><strong>Adreça:</strong> Carrer Logística 12, Barcelona</p>
+<p><strong>Email:</strong> info@foodlogistic.com</p>
+<p><strong>Telèfon:</strong> 900 000 000</p>
+<p>L'ús d'aquest lloc web implica l'acceptació de les condicions legals vigents.</p>
 </div>
 </div>
 
 <div id="privacitat" class="tab-content">
 <div class="card">
-<h3>Privacitat (ARSLOP)</h3>
+<h3>Política de Privacitat</h3>
+<p>Responsable: FoodLogistic S.A.</p>
+<p>Finalitat: gestió de consultes i serveis logístics.</p>
+<p>Base legal: consentiment de l'usuari.</p>
+
+<h4>Drets ARSLOP</h4>
 <ul>
 <li>Accés</li>
 <li>Rectificació</li>
 <li>Supressió</li>
-<li>Oposició</li>
 <li>Limitació</li>
+<li>Oposició</li>
 <li>Portabilitat</li>
 </ul>
+
+<p>Pots exercir els teus drets enviant un correu a info@foodlogistic.com</p>
 </div>
 </div>
 
 <div id="cookies" class="tab-content">
 <div class="card">
-<h3>Cookies</h3>
-<p>Utilitzem cookies analítiques i necessàries amb durada màxima de 12 mesos.</p>
+<h3>Política de Cookies</h3>
+<p>Utilitzem els següents tipus de cookies:</p>
+<ul>
+<li><strong>Necessàries:</strong> funcionament bàsic del web</li>
+<li><strong>Analítiques:</strong> mesurar ús del web</li>
+<li><strong>Màrqueting:</strong> publicitat personalitzada</li>
+</ul>
+<p>Durada màxima: 12 mesos.</p>
 </div>
 </div>
 
@@ -259,12 +248,19 @@ Vull comunicacions comercials
 <p>&copy; 2026 FoodLogistic S.A.</p>
 </footer>
 
-<!-- COOKIE BANNER -->
+<!-- COOKIE AVANZADO -->
 <div id="cookie">
-<span>Utilitzem cookies per millorar la teva experiència.</span>
 <div>
-<button onclick="acceptCookies()">Acceptar</button>
-<button onclick="rejectCookies()">Rebutjar</button>
+<p>Configura les teves cookies:</p>
+<label><input type="checkbox" checked disabled> Necessàries</label>
+<label><input type="checkbox" id="analytics"> Analítiques</label>
+<label><input type="checkbox" id="marketing"> Màrqueting</label>
+</div>
+
+<div>
+<button onclick="acceptAll()">Acceptar tot</button>
+<button onclick="savePreferences()">Guardar</button>
+<button onclick="rejectAll()">Rebutjar</button>
 </div>
 </div>
 
@@ -272,18 +268,29 @@ Vull comunicacions comercials
 function openTab(tab){
     document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
-
     document.getElementById(tab).classList.add('active');
     event.target.classList.add('active');
 }
 
-function acceptCookies(){
-    localStorage.setItem("cookies","ok");
+function acceptAll(){
+    localStorage.setItem("cookies","all");
     document.getElementById("cookie").style.display="none";
 }
 
-function rejectCookies(){
-    localStorage.setItem("cookies","no");
+function rejectAll(){
+    localStorage.setItem("cookies","none");
+    document.getElementById("cookie").style.display="none";
+}
+
+function savePreferences(){
+    const analytics = document.getElementById("analytics").checked;
+    const marketing = document.getElementById("marketing").checked;
+
+    localStorage.setItem("cookies", JSON.stringify({
+        analytics,
+        marketing
+    }));
+
     document.getElementById("cookie").style.display="none";
 }
 
@@ -307,3 +314,4 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
 </body>
 </html>
+```
